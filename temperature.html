@@ -1,48 +1,77 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>Temperature Converter</title>
-        
-        <style>
+    <html>
+        <head>
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <style>
+                * {
+                    box-sizing: border-box;
+                }
 
-            
-        
-        </style>
+                .column {
+                    float: left;
+                    width: 50%;
+                    padding: 10px;
+                    height: 300px; 
+                }
 
-        <div>
-                <table className="titleBar" >
-                  <tbody>
-                    <tr>
-                      <td>
-                        <img alt="app icon" width="100" src="tempConverterIcon.png"></img>
-                      </td>
-                      <td width="8">
-                      <td>
-                        <h1>The Temperature Converter</h1>
-                        <h3 style="margin-left:100px" >By: Randy Yin</h3>
-                      </td>
-                    </tr>
-                  </tbody>
+                .row:after {
+                    content: "";
+                    display: table;
+                    clear: both;
+                    
+                }
+
+                .titleBar {
+                    font-family: Arial, Helvetica, sans-serif;
+                    
+                }
+
+                .column {
+                    font-family: Arial, Helvetica, sans-serif;
+                }
+            </style>
+        </head>
+
+        <body>
+            <div>
+                <table class="titleBar" >
+                    <tbody>
+                        <tr>
+                            <td>
+                                <img alt="app icon" width="100" src="tempConverterIcon.png"></img>
+                            </td>
+                            <td width="8">
+                            <td>
+                                <h1>The Temperature Converter</h1>
+                                <h4 style="text-align: center">By Randy Yin</h4>
+                            </td>
+                        </tr>
+                    </tbody>
                 </table>
-        </div>
-    </head>
+            </div>
 
-    <body>
-        <a style="margin-left:150px" >Enter The Temperature to be Converted</a>
-        
-        <div id="input" >
-            <input type="text" style="width:250px; margin-left:150px; margin-top:10px" placeholder="Enter a number">
-        </div>
-        <input type="radio" name="temp" id="temp_f" value="f" style="margin-left:150px;margin-top:10px "/> Fahrenheit
-        <input type="radio" name="temp" id="temp_c" value="c"  /> Celcius
-        <div id="output">
-            <input type="text" style="width:250px; height:150px; margin-left:150px; margin-top: 50px; text-align: center; font-size: 25px" placeholder="Output">
-        </div>
+      
 
+            <div class="row">
+                <div class="column" style="background-color:aquamarine;">
+                    <h2>Enter Temperature to be Converted</h2>
+                    <div id="input" >
+                            <input type="text" style="width:250px;" placeholder="Enter a number">
+                    </div>
+                    <input type="radio" name="temp" id="temp_f" value="f" style="margin-top: 10px"/> Fahrenheit
+                    <input type="radio" name="temp" id="temp_c" value="c" style="margin-left: 10px" /> Celcius
+                </div>
 
+                <div class="column" style="background-color:aqua;">
+                    <h2>Converted Temperature:</h2>
+                    <div id="output">
+                        <input type="text" style="width:250px; height:150px; text-align: center; font-size: 25px">
+                    </div>
+                </div>
+            </div>
 
+            <script src="temperature.js" charset="utf-8"></script>
 
-        <script src="temperature.js" charset="utf-8"></script>
-    </body>
-</html>
+            </body>
+
+    </html>
