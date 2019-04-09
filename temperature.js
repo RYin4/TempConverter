@@ -38,20 +38,20 @@ function inputToFahrenheit() {
     }
 }
 
+//if no temp scale selected = error, otherwise send input to functions 
+if (input.addEventListener('input', function (evt) {
+    if (!document.getElementById('temp_c').checked && !document.getElementById('temp_f').checked) {
+        console.log('error: no temp scale selection')
+        window.alert("Error: No Temp Scale Selected")
+    } else {
+        input.addEventListener('input', inputToCelcius);
+        input.addEventListener('input', inputToFahrenheit);
+    }
+}));
 
-// if (!document.getElementById('temp_c').checked && !document.getElementById('temp_f').checked ) {
-//     window.alert("No Temperature Scale Has Been Selected")
-// }
 
-const i = document.getElementById("input")
-if (input.value === true) {
-    console.log("yes")
-} else {
-    console.log("no")
-}
 
-input.addEventListener('input', inputToCelcius);
-input.addEventListener('input', inputToFahrenheit);
+
 
 
 
