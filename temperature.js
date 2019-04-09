@@ -2,22 +2,37 @@
 const input = document.querySelector("#input > input");
 const output = document.querySelector("#output > input");
 
-
-
 function inputToCelcius() {
     if (document.getElementById('temp_c').checked) {
+
+        //if the input.value contains any letters = output is false
+        let isNum = /^\d+$/.test(input.value);
+        if (isNum) {
+            console.log("true")
             const fTemp = parseFloat(input.value);
             const cTemp = (fTemp - 32) * (5/9);
             output.value = cTemp;
-    
+        } else {
+            window.alert("Numbers only!")
+            console.log("false")
+        }
     }
 }
 
 function inputToFahrenheit() {
     if (document.getElementById('temp_f').checked) {
-    const cTemp = parseFloat(input.value);
-    const fTemp = (cTemp * (9/5)) + 32;
-    output.value = fTemp;
+
+        //if the input.value contains any letters = output is false
+        let isNum = /^\d+$/.test(input.value);
+        if (isNum) {
+            console.log("true")
+            const cTemp = parseFloat(input.value);
+            const fTemp = (cTemp * (9/5)) + 32;
+            output.value = fTemp;
+        } else {
+            window.alert("Numbers only!")
+            console.log("false")
+        }
     }
 }
 
