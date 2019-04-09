@@ -1,3 +1,5 @@
+//author: Randy Yin
+
 //input element inside of div. instead of using getElementById()
 const input = document.querySelector("#input > input");
 const output = document.querySelector("#output > input");
@@ -12,7 +14,7 @@ function inputToCelcius() {
             const fTemp = parseFloat(input.value);
             const cTemp = (fTemp - 32) * (5/9);
             const n = cTemp.toPrecision(6);
-            output.value = `${fTemp} F = ${n}`
+            output.value = `${fTemp} F = ${n} C`
         } else {
             window.alert("ERROR: Numbers Only!")
             console.log("false")
