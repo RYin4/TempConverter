@@ -1,30 +1,30 @@
 //input element inside of div. instead of using getElementById()
-const celciusInput = document.querySelector("#celcius > input");
-const fahrenheitInput = document.querySelector("#fahrenheit > input");
-const outputInput =document.querySelector("#output > input");
+const input = document.querySelector("#input > input");
+const output = document.querySelector("#output > input");
 
-function celciusToFahrenheit() {
-    // console.log(celciusInput.value);
-    const cTemp = parseFloat(celciusInput.value);
+
+
+function inputToCelcius() {
+    if (document.getElementById('temp_c').checked) {
+            const fTemp = parseFloat(input.value);
+            const cTemp = (fTemp - 32) * (5/9);
+            output.value = cTemp;
+    
+    }
+}
+
+function inputToFahrenheit() {
+    if (document.getElementById('temp_f').checked) {
+    const cTemp = parseFloat(input.value);
     const fTemp = (cTemp * (9/5)) + 32;
-    // console.log(fTemp);
-    outputInput.value = fTemp;
+    output.value = fTemp;
+    }
 }
 
-function fahrenheitToCelcius() {
-    const fTemp = parseFloat(fahrenheitInput.value);
-    const cTemp = (fTemp - 32) * (5/9);
-    // console.log(cTemp);
-    outputInput.value = cTemp;
+
+if (!document.getElementById('temp_c').checked && !document.getElementById('temp_f').checked ) {
+    window.alert("No Temperature Scale Has Been Selected")
 }
 
-//event listeners (any changes to input fields)
-celciusInput.addEventListener('input', celciusToFahrenheit);
-fahrenheitInput.addEventListener('input', fahrenheitToCelcius);
-
-//input box
-//based on toggle selection 
-//perform that function 
-
-
-
+input.addEventListener('input', inputToCelcius);
+input.addEventListener('input', inputToFahrenheit);
