@@ -3,22 +3,43 @@
     <head>
         <meta charset="utf-8">
         <title>Temperature Converter</title>
-        <link rel="stylesheet" href="style.css">
+        <style>
+
+            
+        
+        </style>
+
+        <div>
+                <table className="titleBar" >
+                  <tbody>
+                    <tr>
+                      <td>
+                        <img alt="app icon" width="100" src="tempConverterIcon.png"></img>
+                      </td>
+                      <td width="8">
+                      <td>
+                        <h1>The Temperature Converter</h1>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+        </div>
     </head>
+
     <body>
-        <div id="input">
-            <input type="number" placeholder="input">
+        <a style="margin-left:150px" >Enter The Temperature to be Converted</a>
+        
+        <div id="input" >
+            <input type="text" style="width:250px; margin-left:150px; margin-top:10px" placeholder="Enter a number">
         </div>
-
+        <input type="radio" name="temp" id="temp_f" value="f" style="margin-left:150px;margin-top:10px "/> Fahrenheit
+        <input type="radio" name="temp" id="temp_c" value="c"  /> Celcius
         <div id="output">
-            <input type="number" placeholder="output">
+            <input type="text" style="width:250px; height:150px; margin-left:150px; margin-top: 50px; text-align: center; font-size: 25px" >
         </div>
 
-        <input type="radio" name="temp" id="temp_f" value="f" />F
-        <input type="radio" name="temp" id="temp_c" value="c" />C
 
 
-              
 
         <script src="temperature.js" charset="utf-8"></script>
     </body>
